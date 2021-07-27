@@ -25,7 +25,9 @@ class FlameLabel(QtWidgets.QLabel):
                                'QLabel:disabled {color: #6a6a6a}')
         elif label_type == 'background':
             self.setAlignment(QtCore.Qt.AlignCenter)
-            self.setStyleSheet('color: #9a9a9a; background-color: #393939; font: 14px "Discreet"')
+            self.setStyleSheet('QLabel {color: #9a9a9a; background-color: #393939; font: 14px "Discreet"}'
+                               'QLabel:disabled {color: #6a6a6a}')
         elif label_type == 'outline':
             self.setAlignment(QtCore.Qt.AlignCenter)
-            self.setStyleSheet('color: #9a9a9a; background-color: #212121; border: 1px solid #404040; font: 14px "Discreet"')
+            self.setStyleSheet('QLabel {color: #9a9a9a; background-color: #212121; border: 1px solid #404040; font: 14px "Discreet"}'
+                               'QLabel:disabled {color: #6a6a6a}')
