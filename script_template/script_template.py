@@ -161,7 +161,9 @@ class ScriptTemplate(object):
                     message_box('Unable to create folder:<br>%s<br>Check folder permissions' % self.config_path)
 
             if not os.path.isfile(self.config_xml):
-                print ('>>> config file does not exist, creating new config file <<<')
+                print ('>>> config file does not exist, creating new config file <<<\n')
+
+                # Add default settings here
 
                 config = """
 <settings>
@@ -170,6 +172,8 @@ class ScriptTemplate(object):
         <setting_02>Some Value Here</setting_02>
     </script_template_settings>
 </settings>"""
+
+                # Save settings to config.xml file
 
                 with open(self.config_xml, 'a') as config_file:
                     config_file.write(config)
@@ -190,6 +194,8 @@ class ScriptTemplate(object):
 
             xml_tree = ET.parse(self.config_xml)
             root = xml_tree.getroot()
+
+            # Replace values in config file with values from UI
 
             setting_01 = root.find('.//setting_01')
             setting_01.text = self.line_edit.text()
