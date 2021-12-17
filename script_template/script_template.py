@@ -144,8 +144,6 @@ class ScriptTemplate(object):
             xml_tree = ET.parse(self.config_xml)
             root = xml_tree.getroot()
 
-            # Get Settings from config XML
-
             for setting in root.iter('script_template_settings'):
                 self.setting_01 = setting.find('setting_01').text
                 self.setting_02 = setting.find('setting_02').text
