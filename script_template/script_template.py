@@ -139,6 +139,8 @@ class ScriptTemplate(object):
 
         def get_config_values():
 
+            # Get settings from saved config.xml file
+
             xml_tree = ET.parse(self.config_xml)
             root = xml_tree.getroot()
 
@@ -151,6 +153,8 @@ class ScriptTemplate(object):
             print ('>>> config loaded <<<\n')
 
         def create_config_file():
+
+            # Create config.xml file with default settings
 
             if not os.path.isdir(self.config_path):
                 try:
